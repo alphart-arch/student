@@ -1,0 +1,18 @@
+datasource db {
+  provider = "postgresql"
+  url = "postgresql://postgres:postgres@192.168.1.111/student"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+model student{
+  uid String @id @default(cuid())
+  name String
+  age Int
+  email String
+  dob DateTime
+  Address String
+}
